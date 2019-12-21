@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "myrestaurant-vnqodg",
+  "private_key_id": "fa1c69307915ffac3ae70ec1c14acd0addabbffc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCQD676AMxVRyfn\nHO8ZLOwVUjQCsPnyZKc4SWEOMMhnZpuk+1RydlWbrcxGpeNZRfUtdL1k7NU5Q/tm\neoi2z5d1YROKTpUl7uzUDaz7+RvuMfhUjDL3f1oaiqQSX85fbmamPoVmbozCX6h+\nB/ZlOONJ/0hIzM0cbqd6FCpbl6eaNxuo01oUulURbf/wC7Ma9b7ZF14q9JLREfcx\n4gU+qYHf9Fh48ejYNH+6LYKstnMg7fLFPx8O01vNWSw8Wtal5yM0GrkXioiZXHg4\ny7SxJdM5CUqojse0WovXOakgZECzh54lcPMR7S0nxivny4yrDGIDZW+02PBHUjUr\nHBlzgOgdAgMBAAECggEADXKBVVHcwPsW5PJk+TchxG27cCLf+fneSBlFZ4MzOb+w\nuKpDPDoCjLkg79lNSwiGNduHUFPxJVrMrUiz2UiwbSMGJWtnbbaLQdIS+yRKMKZW\ndWHu4f5vxTl6zkJGK89M4qjEYAbiucQfIMCShelVAhPDxhPj84r6tCEMwSb7XKAz\nYbNV1ZB2L/dYFIDIo5ucML3tuV0wisPZJ9ik2eHNTo2vODKKVjwaXCqsyrhq8PfK\nl9YiVSz2z592na48VZEMYkps5zJJtd33VG8Z01pfnu6dL8+1FfsJzWnEJAVnDDIC\nuDazKXfWfyp/1sv6NOZPL3T4Y9ZRvpbDR+NwZFYlWwKBgQDH40V/wFDk5DT0bIjh\nrTdAZBnJzuxXO1jP5VrJY7Wz4xj2NA8IpPOKPnL9Bn7tytvSoZPzy3zVesp92yq8\nb2FcSCs0Fy3bL27QDdK+9BIbBFIKeaot6OHFv4gFERS+LjdtlP8EkRvMLnONJZeF\n9FHC/bhIvEuVEqikx3C7os+YywKBgQC4gH9J4KZ2NKY+QoHUJz39YrgithdCgzCG\nnl5nVVlRZNOcG1eQrdj2+oDLr1Suegy0KxZFDIF7OrbCwNCbRyQLiWoaSTsZVMRo\nhcNHsruBv/6ISfj2tWRnP3zZMZTjukS0yrh4Ye9HsrSwUm/ozFemKrm71E3EHtFd\nuh3OhN0ttwKBgEIoU6lbwqpvaaN4hLmE9iOGvg5QQWMBznxIogrDyLD4OhvK0SsA\nRWb9ElvymXIk0SretbRcJj4V/Q04y+VATA4aCMqd3VyNT3TnDliLOa7deDXlXNED\nIi6sHN3ocGAdtdS8GsetK3Eh8rbFuWfpnGIYTbUtNSrq2QxowkQoN+OPAoGAOSv4\nRZhLfM2Lxjctq+QNHXt9u6PZSU8FtnFUp4iXCNXJjNIcLETyunWde4B1KSvAzAOd\n/v+FD/59q5O8EKHW1YxbSJHwskTGJ+1rOch0uhwYb3scnrZOyn+t3E+052xM5gj7\naLJQR1NlEk45R1Yqwt7ydvWus1spXXXSzq/1KbkCgYBy5eueiFG3qIGrTNtvRaPx\nu2GKPSfSQ6exjwJblNR+hSvwYdIyNgNPMVi1fRq+WRZZQvQNpKy1diVEq5ZAr6YI\nSTSZVWxbWxpHQkrqBsmToPuWnm4YSnqIIkmkoe6Pg1uFcKBS/pjB9BUskz0/XEj/\nnt1f4+yPJISVHSOG1+Uz2Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-cvdeod@myrestaurant-vnqodg.iam.gserviceaccount.com",
+  "client_id": "102343606573476209218",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-cvdeod%40myrestaurant-vnqodg.iam.gserviceaccount.com"
+}

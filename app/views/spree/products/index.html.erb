@@ -25,3 +25,138 @@
     <% end %>
   </div>
 <% end %>
+
+<div class="col-md-8 col-xl-6 chat">
+  <div class="card">
+    <div class="card-header msg_head">
+      <div class="d-flex bd-highlight">
+        <div class="img_cont">
+          <img src="https://www.omegawatches.com/media/catalog/product/cache/24a428605d9d3486805662c3fc75dd0740bf8916c79722ea9036e86d3e71a17c/o/m/omega-speedmaster-racing-co-axial-chronograph-40-mm-32630405001001-l.png" class="rounded-circle user_img">
+          <span class="online_icon"></span>
+        </div>
+        <div class="user_info">
+          <span>Chat with Luxury Bot</span>
+          <p id="total-message">0 Messages</p>
+        </div>
+        <div class="video_cam">
+          <span><i class="fas fa-video"></i></span>
+          <span><i class="fas fa-phone"></i></span>
+        </div>
+      </div>
+      <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
+      <div class="action_menu">
+        <ul>
+          <li><i class="fas fa-user-circle"></i> View profile</li>
+          <li><i class="fas fa-users"></i> Add to close friends</li>
+          <li><i class="fas fa-plus"></i> Add to group</li>
+          <li><i class="fas fa-ban"></i> Block</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-body msg_card_body">
+    </div>
+    <div class="card-footer">
+      <div class="input-group">
+        <div class="input-group-append">
+          <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+        </div>
+        <textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
+        <div class="input-group-append">
+          <span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    const session_id = uuidv4()
+    const json = {
+      'TAG HEUER AQUARACER CAY211Z.BA0926 CALIBRE 45 43': 10, 
+      'MICHELE DECO CAROUSEL DIAL WATCH': 2,
+      'OMEGA PLANET OCEAN 232.32.46.51.01.001 WATCH 45.5': 5,
+      'JAEGER-LECOULTRE GEOPHYSIC': 6,
+      'SWAROVSKI OCTEA LUX MOON 39MM': 4,
+      'MONTBLANC TIMEWALKER 104668 CHRONOGRAPH WATCH 43MM': 9,
+      'HUBLOT SPIRIT OF BIG BANG': 7,
+      'HUBLOT SPIRIT OF BIG BANG 647.OX.4781.LR.1205 MOONPHASE 42': 3,
+      'OMEGA SEAMASTER 300 234.63.41.21.99.001 CHRONOMETER 41': 14,
+      'OMEGA SPEEDMASTER 327.20.43.50.01.001 MARK II 42.4X46.2MM': 13,
+      'MONTBLANC STAR LEGACY 118514 AUTOMATIC 42MM': 8,
+      'PATEK PHILIPPE 5077-100G-033 HUMMINGBIRDS WATCH 27.5MM': 1,
+      'TAG HEUER CARRERA CAR2A5C.FT6125 CALIBER HEUER 01 45': 16,
+      'TAG HEUER FORMULA 1 WAZ2011.BA0842 WATCH 43MM': 15
+    }
+
+    $('.send_btn').on('click', function() {
+      $.ajax({
+        url: "/answer",
+        data: {
+          text: $('.type_msg').val(),
+          session_id: session_id
+        },
+        beforeSend: function () {
+          const $currentMessage = `
+            <div class="d-flex justify-content-start mb-4">
+            <div class="img_cont_msg">
+              <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+            </div>
+            <div class="msg_cotainer">
+              ${$('.type_msg').val()}
+              <span class="msg_time"><%= DateTime.now.utc %></span>
+            </div>
+          </div>
+          `
+          $('.msg_card_body').append($currentMessage)
+        },
+        success: function(result) {
+          if (result.text.match(/added/)) {
+            const productName = result.text.match(/(?<=Your ).*(?= is)/)[0]
+            const productId = json[productName]
+            addToCart(productId)
+          } 
+          applyIncomingMessage(result.text)
+          $('.type_msg').val('')
+        }
+      })
+    })
+
+    function addToCart (productId) {
+      $.ajax({
+        url: `/add_to_cart`,
+        method: 'POST',
+        data: {
+          id: productId
+        },
+        success: function(result) {
+          $('.number').text(result.total_items)
+        }
+      })
+    }
+
+    function applyIncomingMessage (text) {
+      const $receivedMessage = `
+        <div class="d-flex justify-content-end mb-4">
+          <div class="msg_cotainer_send">
+            ${text}
+            <span class="msg_time_send">${new Date().toTimeString()}</span>
+          </div>
+          <div class="img_cont_msg">
+            <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+          </div>
+        </div>
+      `
+
+      $('.msg_card_body').append($receivedMessage)
+    }
+
+    function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+  })
+</script>
