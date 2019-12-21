@@ -7,11 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //
- AOS.init({
-  duration: 800,
-  easing: 'slide',
-  once: true
- });
 $(document).ready(function() {
   "use strict";
   var slider = function() {
@@ -98,7 +93,7 @@ $(document).ready(function() {
       } else {
         $this.addClass('active');
       }
-      e.preventDefault();  
+      e.preventDefault();
 
     });
 
@@ -124,7 +119,7 @@ $(document).ready(function() {
         $('body').addClass('offcanvas-menu');
         $this.addClass('active');
       }
-    }) 
+    })
 
     // click outisde offcanvas
     $(document).mouseup(function(e) {
@@ -135,7 +130,7 @@ $(document).ready(function() {
         }
       }
     });
-  }; 
+  };
   siteMenuClone();
 
 
