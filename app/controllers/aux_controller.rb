@@ -18,7 +18,7 @@ class AuxController < ApplicationController
   end
 
   def check_cart_items
-    order = spree_current_user.orders.first_or_create
+    order = spree_current_user.orders.where.not(state: 'complete').last
 
     ids = order.line_items.map(&:variant_id)
     render json: { items: Spree::Product.where(id: ids).pluck(:name) }
