@@ -6,6 +6,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require accounting.min
+//= require spree/frontend
 //
 $(document).ready(function() {
   "use strict";
