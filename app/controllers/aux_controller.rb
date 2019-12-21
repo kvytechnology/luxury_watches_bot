@@ -2,6 +2,8 @@ class AuxController < ApplicationController
   def add_to_cart
     order = spree_current_user.orders.where.not(state: 'complete').first_or_create
 
+    puts params.inspect
+
     line_item = Spree::LineItem.find_by(variant_id: params[:id])
 
     if line_item

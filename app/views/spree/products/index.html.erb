@@ -116,6 +116,7 @@
           if (result.text.match(/added/)) {
             const productName = result.text.match(/(?<=Your ).*(?= is)/)[0]
             const productId = json[productName]
+            console.log(productName)
             addToCart(productId)
             applyIncomingMessage(result.text)
           } else if (result.text.match(/Here is the list of items in your cart:/)) {
@@ -127,12 +128,10 @@
 
     function addToCart (productId) {
       $.ajax({
-        url: `/add_to_cart`,
-        method: 'POST',
-        data: {
-          id: productId
-        },
+        url: `/add_to_cart?id=${productId}`,
+        method: 'GET',
         success: function(result) {
+          $('.number').text(result.total_items)
         }
       })
     }
