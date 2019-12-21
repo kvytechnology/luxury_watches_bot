@@ -1,4 +1,4 @@
-<div class="site-navbar bg-white py-2">
+<div class="site-navbar bg-white">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between">
       <div class="logo">
@@ -9,16 +9,20 @@
       <div class="main-nav d-none d-lg-block">
         <nav class="site-navigation text-right text-md-center" role="navigation">
           <ul class="site-menu js-clone-nav d-none d-lg-block">
-
-            <li><a href="/products">Shop</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/products">Winter Collection 2019</a></li>
           </ul>
         </nav>
       </div>
       <div class="icons">
-        <a href="cart.html" class="icons-btn d-inline-block bag">
+          <% if spree_current_user %>
+            <%= link_to Spree.t(:my_account), spree.account_path %>
+            <%= link_to Spree.t(:logout), spree.logout_path %>
+        <% else %>
+            <%= link_to Spree.t(:login), spree.login_path %>
+        <% end %>
+        <a href="/cart" class="icons-btn d-inline-block bag">
           <span class="icon-shopping-bag"></span>
-          <span class="number">2</span>
+          <span class="number"><%= simple_current_order.item_count %></span>
         </a>
         <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
       </div>

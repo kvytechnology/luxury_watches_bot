@@ -20,20 +20,17 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <div class="site-wrap">
       <%= render partial: 'spree/shared/header' %>
-      <div class="container-fluid">
-        <div class="row" data-hook>
-          <%= spree_breadcrumbs(@taxon) %>
 
-          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
-            <%= flash_messages %>
-            <%= yield %>
-          </div>
-
-          <%= yield :templates %>
+      <div class="container" style="margin-top: 100px;">
+        <%= spree_breadcrumbs(@taxon) %>
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
         </div>
-
-        <%= render partial: 'spree/shared/footer' %>
+        <%= yield :templates %>
       </div>
+
+      <%= render partial: 'spree/shared/footer' %>
     </div>
   </body>
 </html>
