@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
-gem 'spree', '~> 3.7.0'
+gem 'spree', '~> 3.7.11'
 gem 'spree_auth_devise', '~> 3.5'
 gem 'spree_gateway', '~> 3.4'
 gem 'google-cloud-dialogflow', '~> 0.12.0'
